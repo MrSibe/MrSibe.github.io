@@ -37,7 +37,7 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/basic/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
+    avatar: 'https://mrsibe.github.io/logo.png',
     name: '西贝的博客',
     description: '啊啊啊啊西贝',
     // circle: true,
