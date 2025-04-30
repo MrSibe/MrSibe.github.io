@@ -16,18 +16,9 @@ list:
     avastar: http://www.168hours.top:7777/upload/%E5%A4%B4%E5%83%8F.webp
     location: 四川，中国
   -
-    name: pengzhanbo
-    link: https://github.com/pengzhanbo
-    avatar: https://github.com/pengzhanbo.png
-    location: 广州，中国
-    organization: VuePress
-    desc: 即使慢，驰而不息，纵会落后，纵会失败，但必须能够到达他所向的目标。
-    socials:
-      -
-        icon: github
-        link: https://github.com/pengzhanbo
-      -
-        icon: twitter
-        link: https://twitter.com/pengzhanbo
+    name: frederick
+    link: https://frederick2313072.github.io/
+    avatar: https://Frederick2313072.github.io/favicon.png
+    location: 中国
 permalink: /article/fdax57qt/
 ---

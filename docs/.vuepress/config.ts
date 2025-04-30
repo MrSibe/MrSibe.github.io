@@ -11,6 +11,16 @@ export default defineUserConfig({
   head: [
     // 配置站点图标
     ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    [
+      "script", {},
+      `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bf916539da7692916f7396946174ebaa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`
+  ]
   ],
 
   bundler: viteBundler(),
