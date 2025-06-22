@@ -1,3 +1,8 @@
+---
+title: C++基础：指针入门
+createTime: 2025/06/23 00:47:37
+permalink: /article/4lo8rf3a/
+---
 一个最简单的场景是交换函数：
 
 ```cpp

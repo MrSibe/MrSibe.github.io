@@ -6,8 +6,17 @@ const CS_61B = defineNoteConfig({
   sidebar: 'auto',
 })
 
+const CS_168 = defineNoteConfig({
+  dir: 'CS_168',
+  link: '/CS_168',
+  sidebar: 'auto',
+})
+
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [CS_61B],
+  notes: [
+    CS_61B,
+    CS_168,
+  ],
 })

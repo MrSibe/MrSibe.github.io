@@ -1,3 +1,8 @@
+---
+title: C++基础：const修饰指针
+createTime: 2025/06/23 00:47:37
+permalink: /article/8bz1sr3j/
+---
 之前讲过 const 可以声明一个常量：
 
 ```cpp
