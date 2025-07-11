@@ -10,7 +10,7 @@ export default defineUserConfig({
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/png', href: 'https://MrSibe.github.io/blob/gh-pages/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: 'https://MrSibe.github.io/logo.png' }],
     [
       "script", {},
       `var _hmt = _hmt || [];
