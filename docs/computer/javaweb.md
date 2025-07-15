@@ -3,6 +3,7 @@ title: 黑马JavaWeb笔记
 createTime: 2025/07/13 23:02:17
 permalink: /article/ixsxdd4u/
 ---
+
 前面关于前端的知识讲解直接跳过，进入后端技术栈部分。
 
 ## Day 4 Maven 与 Web 入门
@@ -98,3 +99,175 @@ public class Result {
 Spring 中对需要容器管理的类 A加上 `@Component` 注解，然后需要类 A的类 B，在 `private A a;` 前面加上 `@AutoWired` 注解，IoC 容器会向类 B 注入类 A。它是 spring 提供的按照类型注入的注解，若注入多个同类型的，需要用 `@Primary`、`@Resource`  代替。（`@Resource` 是 JDK 提供的，按名称注入）
 
 `@Component` 注解有几个特化：`@Controller` 用于 Controller 层，`@Service` 用于 Service 层，`@Repository` 用于 DAO 层。
+
+## Day 6 & 7 & 8 MySQL
+
+MySQL 这里打算水一点，很多操作都可以图形化管理，后面项目用到了再加深记忆。先广度后深度。
+
+### DDL 数据定义语言
+
+```MySQL
+-- 数据库相关
+SHOW DATABASES; -- 查询所有数据库
+SELECT DATABASE(); -- 查询当前数据库
+CREATE DATABASE [IF NOT EXISTS] 数据库名; -- 创建数据库
+USE 数据库名; -- 使用数据库
+DROP DATABASE [IF EXISTS] 数据库名; -- 删除数据库
+```
+
+![{814B6C99-A38E-4CCE-B53A-786D88ABC0D9}.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%7B814B6C99-A38E-4CCE-B53A-786D88ABC0D9%7D.png)
+
+![{F3943A05-2113-40A9-8686-A5C6087E6C9C}.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%7BF3943A05-2113-40A9-8686-A5C6087E6C9C%7D.png)
+
+![{4FABC84F-A8B5-4193-9EE2-4E3BE626745C}.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%7B4FABC84F-A8B5-4193-9EE2-4E3BE626745C%7D.png)
+
+![{76E8E504-95B6-4ED8-92B7-080CD1194170}.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%7B76E8E504-95B6-4ED8-92B7-080CD1194170%7D.png)
+
+```MySQL
+-- 查询
+SHOW TABLES; -- 查询当前数据库所有表
+DESC 表名; -- 查询数据库结构
+SHOW CREATE TABLE 表名; -- 查询建表语句
+```
+
+![{366B15A1-B4EF-4F23-AD4D-3B0A184F5620}.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%7B366B15A1-B4EF-4F23-AD4D-3B0A184F5620%7D.png)
+
+![{4EC3C284-8397-4A34-A5A8-ADD1864EACBB}.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%7B4EC3C284-8397-4A34-A5A8-ADD1864EACBB%7D.png)
+
+### DML 数据操作语言
+
+- 添加 (INSERT)
+- 修改 (UPDATE)
+- 删除 (DELETE)
+
+注意：字符串和时间数据应该存放在引号里面。
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715110720.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715110850.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715110934.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715111013.png)
+
+### DQL 数据查询语言
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715114400.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715114424.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715114519.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715114632.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715114716.png)
+
+![](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-15%20114744.png)
+
+![屏幕截图 2025-07-15 114804.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-15%20114804.png)
+
+## Day 9 MyBatis
+
+### 入门
+
+MyBatis 是一个用来简化 JDBC 的持久化框架，在 JavaWeb 后端层次中处于 DAO 层（Mapper）。
+
+使用 MyBatis 需要先在 pom 中引入依赖，然后在项目的 application 配置文件中填写配置项，最后用注解写 MySQL 语句，绑定在 Mapper 层里就可以了。
+
+之前用 JDBC 写程序，需要手动创建并关闭与数据库的连接，特别容易出错。我们可以引入**数据库连接池**，这是一个容器，负责分配数据库连接，使得一个程序可以多次调用一个 JDBC 连接，来保证复用率和响应速度。
+
+Lombok 也常用，它是一个 Java 类库，可以用注解的方式自动生成 getter、setter 方法，简化 Java 开发。
+
+![屏幕截图 2025-07-15 153027.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-15%20153027.png)
+
+### 删除
+
+SQL 注入问题可以通过预编译解决：
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715154623.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715154813.png)
+
+### 新增
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715155135.png)
+
+如果要主键返回则：
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715155244.png)
+
+### 更新
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715155618.png)
+
+### 查询
+
+查询会遇到数据库字段和 POJO 字段不匹配的问题，可以想办法映射过去：
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715155823.png)
+
+### Xml 映射
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715155936.png)
+
+可以用 IDEA 的 MyBatisX 插件来辅助开发。
+
+### 动态 SQL
+
+![](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715161305.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715161343.png)
+
+Day 10 & 11 为案例，直接跳过
+
+## Day 12 登录
+
+登录也是一样的，创建用户表，然后 Controller、Service、Mapper。
+
+最常考也是最核心的是登录校验，需要用到 JWT、拦截器和过滤器。
+
+### 登录校验
+
+#### 会话跟踪之 JWT
+
+会话，指的是浏览器和 web 服务器的连接。一个会话过程中可以有多个请求和返回。
+
+之前提到过 http 是无记忆的，但是有的时候我们需要在一个会话的不同请求返回中共享信息，因此需要进行**会话跟踪**，搞清楚哪些请求和返回是同一个会话的。
+
+常见的会话跟踪方法有以下几种：
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715163743.png)
+
+主流的令牌技术就是 JWT（Json Web Token），由三部分组成，并通过 base64 编码：
+
+ 1. Header：头部，记录令牌类型和签名算法。
+ 2. Payload：数据
+ 3. Signature：签名，防止信息被篡改
+
+登录成功之后，服务端会生成 JWT 令牌发给客户端；客户端后面每次请求必须带上令牌，服务器统一拦截校验通过之后才处理返回。
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715171738.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715171759.png)
+
+服务器接收到请求，需要先过滤或者拦截请求。
+
+#### 过滤器
+
+过滤器的实现只需要实现 Filter 接口，重写所有方法，并且加上 `@WebFilter` 注解。
+
+如果要放行请求，则用 chain 的 doFilter 方法来放行。
+
+多个过滤器可以形成一个过滤器链。
+
+#### 拦截器
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715180557.png)
+
+![image.png](https://raw.githubusercontent.com/MrSibe/obsidian_images/main/20250715180955.png)
+
+### 全局异常处理器
+
+加上 `@RestControllerAdvice` ，一个类型的方法加上 `@ExceptionHandler`。
+
+## Day 13 事务管理与 AOP
