@@ -14,13 +14,20 @@ export default defineUserConfig({
     [
       "script", {},
       `var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?bf916539da7692916f7396946174ebaa";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();`
-  ]
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?bf916539da7692916f7396946174ebaa";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`
+    ],
+    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-BZZVEEJVCS' }],
+    ['script', {}, `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BZZVEEJVCS');
+    `]
   ],
 
   bundler: viteBundler(),
