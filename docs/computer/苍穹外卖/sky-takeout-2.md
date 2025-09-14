@@ -1,7 +1,7 @@
 ---
 title: 苍穹外卖 | Day 2 员工与菜品业务逻辑
 createTime: 2025/07/11 20:16:48
-permalink: /article/v1lh2wbj/
+permalink: /article/sky-takeout-2/
 ---
 ## 新增员工
 

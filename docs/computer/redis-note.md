@@ -1,7 +1,7 @@
 ---
-title: 黑马Redis笔记
+title: 黑马程序员 | Redis笔记
 createTime: 2025/07/17 11:49:23
-permalink: /article/vejwsu27/
+permalink: /article/redis-note/
 ---
 ## Redis 基础篇
 

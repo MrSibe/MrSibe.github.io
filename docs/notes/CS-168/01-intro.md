@@ -1,7 +1,7 @@
 ---
 title: 1. 介绍
 createTime: 2025/06/23 01:08:51
-permalink: /CS_168/04jru5oy/
+permalink: /CS-168/01-intro/
 ---
 ## 一、互联网导论
 

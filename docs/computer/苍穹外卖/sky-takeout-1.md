@@ -1,7 +1,7 @@
 ---
 title: 苍穹外卖 | Day 1 起步
 createTime: 2025/07/11 16:23:00
-permalink: /article/gyrtd4e6/
+permalink: /article/sky-takeout-1/
 ---
 ## 软件开发流程
 

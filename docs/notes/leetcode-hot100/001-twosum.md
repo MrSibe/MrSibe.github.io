@@ -1,7 +1,7 @@
 ---
 title: Hot 100 | 1. 两数之和
 createTime: 2025/07/19 10:22:44
-permalink: /article/a8mo1hu7/
+permalink: /hot100/001-twosum/
 ---
 ## 题目
 

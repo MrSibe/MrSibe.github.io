@@ -1,7 +1,7 @@
 ---
-title: 黑马JavaWeb笔记
+title: 黑马程序员 | JavaWeb笔记
 createTime: 2025/07/13 23:02:17
-permalink: /article/ixsxdd4u/
+permalink: /article/javaweb-note/
 ---
 
 前面关于前端的知识讲解直接跳过，进入后端技术栈部分。

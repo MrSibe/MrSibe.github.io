@@ -1,7 +1,7 @@
 ---
 title: 2. 路由
 createTime: 2025/07/11 15:03:30
-permalink: /CS_168/smeb13de/
+permalink: /CS-168/02-router/
 ---
 ## 一、路由简介
 
