@@ -6,8 +6,9 @@ export const navbar = defineNavbarConfig([
   {
     text: '笔记',
     items: [
-      { text: 'CS 61B', link: 'notes/CS_61B/CS_61B_0.md' },
-      { text: 'CS 168', link: 'notes/CS_168/CS_168_1.md' },
+      { text: 'CS 61B', link: 'notes/CS-61B/README.md' },
+      { text: 'CS 168', link: 'notes/CS-168/01-intro.md' },
+      { text: 'Leetcode Hot 100', link: 'notes/hot100/001-twosum.md' },
     ]
   },
   {
